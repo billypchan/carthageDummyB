@@ -10,5 +10,6 @@ jobs:
         runs-on: ubuntu-latest
         steps: 
             - name: tag
-              if: ${{github.event.pull_request.merged == 'true'}} 
-              run: echo "tag and release"
+              if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
+              run: |
+                echo "tag and release"
