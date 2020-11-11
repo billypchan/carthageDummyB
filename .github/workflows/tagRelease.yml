@@ -6,7 +6,9 @@ on:
 
 jobs:
     tag:
+        name: tag
         runs-on: ubuntu-latest
-            if: github.event.pull_request.merged == 'true'
-            run: |
-                echo "tag and release"
+        steps: 
+            - name: tag
+              if: ${{github.event.pull_request.merged == 'true'}} 
+              run: echo "tag and release"
