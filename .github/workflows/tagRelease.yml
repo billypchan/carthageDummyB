@@ -1,4 +1,4 @@
-name: trigger bump
+name: tag and release
 
 on:
     pull_request:
@@ -7,9 +7,6 @@ on:
 jobs:
     tag:
         runs-on: ubuntu-latest
-
-    steps:
-        - name: tag and release
             if: github.event.pull_request.merged == 'true'
             run: |
                 echo "tag and release"
