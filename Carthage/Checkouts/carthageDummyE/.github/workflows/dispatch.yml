@@ -1,4 +1,4 @@
-name: trigger bump
+name: dispatch
 
 on:
   push:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: trigger parent(s) repo bump
+      - name: dispatch trigger parent(s) repo bump
         run: |
           curl -X POST https://api.github.com/repos/billypchan/carthageDummyD/dispatches \
           -H 'Accept: application/vnd.github.everest-preview+json' \
